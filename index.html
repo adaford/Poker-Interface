@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="http://unpkg.com/vue"></script>
+</head>
+
+<body>
+  <div id="my-vue-app">
+   <div id="background">
+     <div id="topBar">
+       <button id="newGame" v-on:click="newGame">New Game</button>
+     </div>
+     <div id="opponentCards">
+     	<img id="oc1">
+     	<img id="oc2">
+     </div>
+     <div id="board">
+     	<img id="bc1">
+     	<img id="bc2">
+     	<img id="bc3">
+     	<img id="bc4">
+     	<img id="bc5">
+     </div>
+     <div id="yourCards">
+     	<img id="yc1">
+     	<img id="yc2">
+     </div>
+     <div class="pot"><img id="pot" src="img/poker_chip.png"><h1><pre>    <br>   {{pot}}</pre></h1></div>
+     <div id="oppsChips">
+     	<img id="ochip" src="img/poker_chip.png">
+     	<h1><pre>  {{chips.opps}}</pre></h1>
+     </div>
+     <div id="yourChips">
+     	<img id="ychip" src="img/poker_chip.png">
+     	<h1><pre>  {{chips.yours}}</pre></h1>
+     </div>
+     <div class="yourBet">
+     	<img id="ybet" src="img/poker_chip.png">
+     	<h1><pre>  {{bets.yours}}</pre></h1>
+     </div>
+     <div class="oppsBet">
+     	<img id="obet" src="img/poker_chip.png">
+     	<h1><pre>  {{bets.opps}}</pre></h1>
+     </div>
+
+     <div id="action">{{actionText.action}}<br><br>{{actionText.turn}}</div>
+     <img id="button" src="img/button.png">
+     <button id="call" v-on:click="act">Call</button>
+     <button id="fold" v-on:click="act">Fold</button>
+     <button id="check" v-on:click="act">Check</button>
+     <button id="raise" v-on:click="act">Raise</button>
+     <input type="text" id="raiseAmount" name="raiser" placeholder="Amount to Raise" :style="raiseAmount.visibility">
+     <div id="invalidRaise" :style="invalidRaise.visibility">Invalid Raise!</div>
+
+
+   </div>
+  </div>
+</body>
+<script src="vue.js"></script>
+
+</html>
